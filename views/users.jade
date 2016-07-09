@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1.
+      User List
+  ul
+      each user, i in users
+          li
+              a(href="mailto:#{user.email}")= user.username
+  h1.
+      Add User
+  br
+  form#formAddUser(name="addUser",method="post" ,action="/addUser")
+      input#inputUserName(type="text", placeholder="username", name="username")
+      input#inputEmail(type="text", placeholder="email", name="email")
+      button#submitBtn(type="submit") submit

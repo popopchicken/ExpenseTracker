@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h3.
+      Expense List
+  ul
+      each expense, i in expenses
+        li
+            a(href="")= expense.name
+  h3.
+      Add Expense
+  form#formAddExpense(name="addExpense",method="post" ,action="/addExpense")
+      input#inputItem(type="text", placeholder="item", name="item")
+      br
+      input#inputCost(type="text", placeholder="cost", name="cost")
+      br
+      button#submitBtn(type="submit") submit
